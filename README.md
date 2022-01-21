@@ -1,6 +1,6 @@
 # nba_scoreboard.rb
 
-If you ever wanted to pass in an argument from the terminal line you can do so with `ARGV`.
+If you ever wanted to pass an argument from the terminal line you can do so with `ARGV`.
 
 `ruby nba_scoreboard.rb today` will get your today's nba scores
 
