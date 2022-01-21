@@ -18,7 +18,10 @@ res = Net::HTTP.get(uri)
 a = JSON.parse(res)
 
 a.dig("games").each do |game|
-  puts game['vTeam']['triCode'].to_s + '-' + game['vTeam']['score'].to_s
-  puts game['hTeam']['triCode'].to_s + '-' + game['hTeam']['score'].to_s
+  away = game['vTeam']
+  home = game['hTeam']
+  puts 'Tipoff: ' + game['startTimeEastern']
+  puts away['triCode'].to_s + '-' + away['score'].to_s + "#{'*' if away['score'].to_i > home['score'].to_i}"
+  puts home['triCode'].to_s + '-' + home['score'].to_s + "#{'*' if home['score'].to_i > away['score'].to_i}"
   puts '---------------------------------------'
 end
